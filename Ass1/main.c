@@ -3,7 +3,6 @@
 #include <stdio.h>
 #define N 10
 
-
 int main(void)
 {
 	short mas[N];
@@ -73,22 +72,22 @@ int main(void)
 		m :
 			cmp edx, ebx
 			mov esi, ebx
-			jb ten_1    // если индекс мин. меньше чем индекс макс. 
-			jmp ten_2
+			jb dop_1    // если индекс мин. меньше чем индекс макс. 
+			jmp dop_2
 
-		ten_1:
+		dop_1:
 			sub esi, 2
 			cmp esi, edx
 			je ex
 			add[esi], 10
-			jmp ten_1
+			jmp dop_1
 
-		ten_2 :
+		dop_2 :
 			add esi, 2
 			cmp esi, edx
 			je ex
 			add[esi], 10
-			jmp ten_2
+			jmp dop_2
 
 		null_1 :
 			sub esi, 2
